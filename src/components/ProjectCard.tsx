@@ -70,7 +70,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
 
         <div className="flex flex-wrap gap-3 border-t border-dashed border-border pt-4">
-          {project.serviceUrl ? (
+          {project.serviceUrl && (
             <a
               href={project.serviceUrl}
               target="_blank"
@@ -90,26 +90,24 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               </span>
               <span className="cosmic-sweep absolute inset-0" />
             </a>
-          ) : project.downloadUrls?.length ? (
-            <>
-              {project.downloadUrls.map((dl) => (
-                <a
-                  key={dl.platform}
-                  href={dl.url}
-                  download
-                  className="download-btn group/dl relative inline-flex items-center gap-2 overflow-hidden px-5 py-3 font-pixel text-[9px] transition-all duration-300"
-                >
-                  <span className="download-border absolute inset-0 rounded-sm" />
-                  <span className="download-bg absolute inset-0 rounded-sm" />
-                  <span className="relative z-10 flex items-center gap-2">
-                    <span className="download-icon inline-block text-[11px]">⬇</span>
-                    <span className="download-badge inline-block text-[7px]">{dl.platform}</span>
-                  </span>
-                  <span className="download-sweep absolute inset-0" />
-                </a>
-              ))}
-            </>
-          ) : project.demoUrl ? (
+          )}
+          {project.downloadUrls?.map((dl) => (
+            <a
+              key={dl.platform}
+              href={dl.url}
+              download
+              className="download-btn group/dl relative inline-flex items-center gap-2 overflow-hidden px-5 py-3 font-pixel text-[9px] transition-all duration-300"
+            >
+              <span className="download-border absolute inset-0 rounded-sm" />
+              <span className="download-bg absolute inset-0 rounded-sm" />
+              <span className="relative z-10 flex items-center gap-2">
+                <span className="download-icon inline-block text-[11px]">⬇</span>
+                <span className="download-badge inline-block text-[7px]">{dl.platform}</span>
+              </span>
+              <span className="download-sweep absolute inset-0" />
+            </a>
+          ))}
+          {project.demoUrl && (
             <a
               href={project.demoUrl}
               target="_blank"
@@ -129,7 +127,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               </span>
               <span className="stellar-sweep absolute inset-0" />
             </a>
-          ) : (
+          )}
+          {!project.serviceUrl && !project.downloadUrls?.length && !project.demoUrl && (
             <div className="wreck-btn group/wreck relative inline-flex items-center gap-2 overflow-hidden px-6 py-3 font-pixel text-[9px] cursor-default">
               <span className="wreck-border absolute inset-0 rounded-sm" />
               <span className="wreck-bg absolute inset-0 rounded-sm" />

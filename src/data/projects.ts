@@ -21,6 +21,10 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/kimchulyeon',
     websiteUrl: undefined,
     serviceUrl: 'https://glitchsnap.com/',
+    downloadUrls: [
+      { url: 'https://s3.ap-northeast-2.amazonaws.com/glitchsnap-releases/latest/Glitchsnap_macos_aarch64.dmg', platform: 'macOS' },
+      { url: 'https://s3.ap-northeast-2.amazonaws.com/glitchsnap-releases/latest/Glitchsnap_windows.exe', platform: 'Windows' },
+    ],
   },
   {
     title: 'Dasibogi',
