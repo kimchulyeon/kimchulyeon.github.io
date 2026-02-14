@@ -6,6 +6,9 @@ export interface Project {
   imagePosition?: string;
   githubUrl: string;
   websiteUrl?: string;
+  serviceUrl?: string;
+  downloadUrls?: { url: string; platform: string }[];
+  demoUrl?: string;
 }
 
 export const projects: Project[] = [
@@ -17,6 +20,7 @@ export const projects: Project[] = [
     screenshot: '/images/glitchsnap.png',
     githubUrl: 'https://github.com/kimchulyeon',
     websiteUrl: undefined,
+    serviceUrl: 'https://glitchsnap.com/',
   },
   {
     title: 'Dasibogi',
@@ -27,6 +31,12 @@ export const projects: Project[] = [
     imagePosition: 'top',
     githubUrl: 'https://github.com/kimchulyeon',
     websiteUrl: undefined,
+    downloadUrls: [
+      { url: 'https://s3.ap-northeast-2.amazonaws.com/dasibogi-releases/latest/Dasibogi_macos_aarch64.dmg', platform: 'macOS ARM' },
+      { url: 'https://s3.ap-northeast-2.amazonaws.com/dasibogi-releases/latest/Dasibogi_macos_x64.dmg', platform: 'macOS Intel' },
+      { url: 'https://s3.ap-northeast-2.amazonaws.com/dasibogi-releases/latest/Dasibogi_windows.msi', platform: 'Win MSI' },
+      { url: 'https://s3.ap-northeast-2.amazonaws.com/dasibogi-releases/latest/Dasibogi_windows.exe', platform: 'Win EXE' },
+    ],
   },
   {
     title: 'RectangleSnap',

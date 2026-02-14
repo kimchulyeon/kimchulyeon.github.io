@@ -101,3 +101,687 @@ body::before {
     inset 0 0 30px rgba(74, 222, 128, 0.05),
     0 0 12px rgba(74, 222, 128, 0.1);
 }
+
+/* ============================================
+   COSMIC RETRO SERVICE BUTTON
+   ============================================ */
+
+.cosmic-border {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(135deg, #1a0830, #0d0a1f, #0a1618) padding-box,
+    linear-gradient(135deg, #e879f9, #a855f7, #4ade80, #c084fc, #e879f9) border-box;
+  background-size: 100% 100%, 400% 400%;
+  animation: cosmic-border-flow 4s linear infinite;
+}
+
+@keyframes cosmic-border-flow {
+  0% { background-position: 0 0, 0% 0%; }
+  50% { background-position: 0 0, 100% 100%; }
+  100% { background-position: 0 0, 0% 0%; }
+}
+
+.cosmic-bg {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(168, 85, 247, 0.3), transparent 70%),
+    radial-gradient(ellipse at 80% 50%, rgba(192, 132, 252, 0.2), transparent 70%),
+    radial-gradient(ellipse at 50% 80%, rgba(74, 222, 128, 0.1), transparent 70%);
+  pointer-events: none;
+  animation: cosmic-bg-pulse 3s ease-in-out infinite;
+}
+
+@keyframes cosmic-bg-pulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+.cosmic-btn {
+  animation: cosmic-glow 2s ease-in-out infinite;
+  cursor: pointer;
+}
+
+@keyframes cosmic-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.6))
+            drop-shadow(0 0 16px rgba(232, 121, 249, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 14px rgba(232, 121, 249, 0.8))
+            drop-shadow(0 0 28px rgba(168, 85, 247, 0.4))
+            drop-shadow(0 0 40px rgba(74, 222, 128, 0.15));
+  }
+}
+
+.cosmic-btn:hover {
+  filter: drop-shadow(0 0 16px rgba(232, 121, 249, 0.9))
+          drop-shadow(0 0 32px rgba(168, 85, 247, 0.6))
+          drop-shadow(0 0 48px rgba(192, 132, 252, 0.3)) !important;
+  transform: translateY(-2px);
+}
+
+.cosmic-btn:hover .cosmic-border {
+  background:
+    linear-gradient(135deg, #2a0e4a, #1a0830, #0a1618) padding-box,
+    linear-gradient(135deg, #f0abfc, #a855f7, #4ade80, #e879f9, #f0abfc) border-box;
+  background-size: 100% 100%, 400% 400%;
+  animation: cosmic-border-flow 2s linear infinite;
+}
+
+.cosmic-btn:hover .cosmic-bg {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(232, 121, 249, 0.35), transparent 70%),
+    radial-gradient(ellipse at 80% 50%, rgba(192, 132, 252, 0.3), transparent 70%),
+    radial-gradient(ellipse at 50% 80%, rgba(74, 222, 128, 0.15), transparent 70%);
+  opacity: 1;
+}
+
+.cosmic-text {
+  color: #e879f9 !important;
+  text-shadow: 0 0 8px rgba(232, 121, 249, 0.6), 0 0 20px rgba(168, 85, 247, 0.3) !important;
+  animation: cosmic-text-glow 2s ease-in-out infinite !important;
+}
+
+@keyframes cosmic-text-glow {
+  0%, 100% { text-shadow: 0 0 8px rgba(232, 121, 249, 0.6), 0 0 20px rgba(168, 85, 247, 0.3); }
+  50% { text-shadow: 0 0 14px rgba(232, 121, 249, 1), 0 0 28px rgba(168, 85, 247, 0.5), 0 0 40px rgba(192, 132, 252, 0.2); }
+}
+
+.cosmic-star {
+  color: #e879f9 !important;
+  text-shadow: 0 0 10px rgba(232, 121, 249, 1), 0 0 20px rgba(168, 85, 247, 0.6) !important;
+  animation: cosmic-star-spin 3s linear infinite !important;
+}
+
+@keyframes cosmic-star-spin {
+  0% { transform: rotate(0deg) scale(1); color: #e879f9 !important; }
+  25% { transform: rotate(90deg) scale(1.5); color: #4ade80 !important; }
+  50% { transform: rotate(180deg) scale(1); color: #c084fc !important; }
+  75% { transform: rotate(270deg) scale(1.5); color: #22d3ee !important; }
+  100% { transform: rotate(360deg) scale(1); color: #e879f9 !important; }
+}
+
+.cosmic-sparkle {
+  color: #f0abfc !important;
+  text-shadow: 0 0 10px rgba(240, 171, 252, 1), 0 0 20px rgba(232, 121, 249, 0.8) !important;
+  animation: cosmic-sparkle-float 2s ease-out infinite !important;
+  pointer-events: none;
+}
+
+.cosmic-sparkle-delay {
+  color: #4ade80 !important;
+  text-shadow: 0 0 10px rgba(74, 222, 128, 1), 0 0 20px rgba(74, 222, 128, 0.8) !important;
+  animation: cosmic-sparkle-float 2s ease-out 0.7s infinite !important;
+  pointer-events: none;
+}
+
+.cosmic-sparkle-slow {
+  color: #22d3ee !important;
+  text-shadow: 0 0 10px rgba(34, 211, 238, 1), 0 0 20px rgba(34, 211, 238, 0.8) !important;
+  animation: cosmic-sparkle-float 2s ease-out 1.3s infinite !important;
+  pointer-events: none;
+}
+
+@keyframes cosmic-sparkle-float {
+  0% { transform: translateY(0) scale(0); opacity: 0; }
+  15% { transform: translateY(-4px) scale(1.4); opacity: 1; }
+  50% { transform: translateY(-12px) scale(1); opacity: 0.8; }
+  100% { transform: translateY(-24px) scale(0); opacity: 0; }
+}
+
+.cosmic-arrows {
+  color: #e879f9 !important;
+  animation: cosmic-arrow-blink 0.8s step-end infinite !important;
+}
+
+@keyframes cosmic-arrow-blink {
+  0%, 100% { color: #e879f9 !important; opacity: 0.6; text-shadow: 0 0 6px rgba(232, 121, 249, 0.8); }
+  50% { color: #4ade80 !important; opacity: 1; text-shadow: 0 0 6px rgba(74, 222, 128, 0.8); }
+}
+
+.cosmic-sweep {
+  background: linear-gradient(
+    105deg,
+    transparent 25%,
+    rgba(232, 121, 249, 0.12) 40%,
+    rgba(192, 132, 252, 0.15) 50%,
+    rgba(74, 222, 128, 0.1) 60%,
+    transparent 75%
+  );
+  transform: translateX(-100%);
+  animation: cosmic-sweep-move 3.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes cosmic-sweep-move {
+  0%, 100% { transform: translateX(-120%); }
+  50% { transform: translateX(120%); }
+}
+
+.cosmic-btn:hover .cosmic-sweep {
+  animation: cosmic-sweep-move 1.5s ease-in-out infinite;
+}
+
+.cosmic-btn:hover .cosmic-sparkle,
+.cosmic-btn:hover .cosmic-sparkle-delay,
+.cosmic-btn:hover .cosmic-sparkle-slow {
+  animation-duration: 1s !important;
+}
+
+/* ============================================
+   WRECKED SPACESHIP - SIGNAL LOST BUTTON
+   ============================================ */
+
+.wreck-border {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(135deg, #1a0a0a, #0d0808, #110a0a) padding-box,
+    linear-gradient(135deg, #ef4444, #7f1d1d, #451a1a, #92400e, #ef4444) border-box;
+  background-size: 100% 100%, 400% 400%;
+  animation: wreck-border-flicker 3s steps(8) infinite;
+}
+
+@keyframes wreck-border-flicker {
+  0%, 100% { background-position: 0 0, 0% 0%; opacity: 0.7; }
+  10% { opacity: 1; }
+  20% { opacity: 0.5; background-position: 0 0, 30% 30%; }
+  40% { opacity: 0.9; background-position: 0 0, 60% 60%; }
+  50% { opacity: 0.3; }
+  60% { opacity: 0.8; background-position: 0 0, 80% 80%; }
+  80% { opacity: 0.6; background-position: 0 0, 100% 100%; }
+  90% { opacity: 1; }
+}
+
+.wreck-bg {
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(239, 68, 68, 0.12), transparent 60%),
+    radial-gradient(ellipse at 70% 40%, rgba(146, 64, 14, 0.1), transparent 60%);
+  pointer-events: none;
+}
+
+.wreck-btn {
+  animation: wreck-glow 3s ease-in-out infinite;
+}
+
+@keyframes wreck-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px rgba(239, 68, 68, 0.2))
+            drop-shadow(0 0 8px rgba(127, 29, 29, 0.15));
+  }
+  30% {
+    filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.4))
+            drop-shadow(0 0 16px rgba(239, 68, 68, 0.15));
+  }
+  50% {
+    filter: drop-shadow(0 0 2px rgba(239, 68, 68, 0.1));
+  }
+  70% {
+    filter: drop-shadow(0 0 6px rgba(239, 68, 68, 0.3))
+            drop-shadow(0 0 12px rgba(146, 64, 14, 0.2));
+  }
+}
+
+/* Damaged text - red/amber with glitch */
+.wreck-text {
+  color: #ef4444 !important;
+  text-shadow: 0 0 6px rgba(239, 68, 68, 0.5), 0 0 12px rgba(127, 29, 29, 0.3) !important;
+  animation: wreck-text-damage 4s steps(1) infinite !important;
+}
+
+@keyframes wreck-text-damage {
+  0%, 100% { opacity: 0.8; transform: none; }
+  5% { opacity: 1; transform: translateX(1px); }
+  10% { opacity: 0.6; transform: translateX(-1px) skewX(-2deg); }
+  15% { opacity: 0.9; transform: none; }
+  50% { opacity: 0.7; }
+  52% { opacity: 0.3; transform: translateX(2px); }
+  54% { opacity: 0.9; transform: none; }
+  80% { opacity: 0.8; }
+  82% { opacity: 0.4; transform: skewX(1deg); }
+  84% { opacity: 0.8; transform: none; }
+}
+
+.wreck-glitch {
+  animation: wreck-cursor-glitch 0.8s steps(1) infinite !important;
+  color: #f97316 !important;
+}
+
+@keyframes wreck-cursor-glitch {
+  0%, 100% { opacity: 1; }
+  30% { opacity: 0; }
+  50% { opacity: 1; content: "█"; }
+  70% { opacity: 0; }
+}
+
+/* Broken icon - flickering */
+.wreck-icon {
+  color: #f97316 !important;
+  text-shadow: 0 0 8px rgba(249, 115, 22, 0.8) !important;
+  animation: wreck-icon-flicker 2s steps(1) infinite !important;
+}
+
+@keyframes wreck-icon-flicker {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  10% { opacity: 1; transform: scale(1.2); color: #ef4444 !important; }
+  20% { opacity: 0.3; transform: scale(0.9); }
+  30% { opacity: 0.8; transform: scale(1); }
+  60% { opacity: 0.4; }
+  65% { opacity: 0.9; color: #fbbf24 !important; }
+  70% { opacity: 0.5; transform: scale(1); }
+}
+
+/* Electric sparks */
+.wreck-spark {
+  color: #fbbf24 !important;
+  text-shadow: 0 0 8px rgba(251, 191, 36, 1), 0 0 16px rgba(249, 115, 22, 0.8) !important;
+  animation: wreck-spark-flash 1.5s steps(1) infinite !important;
+  pointer-events: none;
+}
+
+.wreck-spark-delay {
+  color: #f97316 !important;
+  text-shadow: 0 0 6px rgba(249, 115, 22, 1), 0 0 14px rgba(239, 68, 68, 0.6) !important;
+  animation: wreck-spark-flash 1.5s steps(1) 0.6s infinite !important;
+  pointer-events: none;
+}
+
+@keyframes wreck-spark-flash {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  5% { opacity: 1; transform: scale(1.3); }
+  10% { opacity: 0.8; transform: scale(1); }
+  15% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 0; }
+  55% { opacity: 1; transform: scale(1.1); }
+  60% { opacity: 0.5; }
+  65% { opacity: 0; }
+}
+
+/* Smoke rising */
+.wreck-smoke {
+  color: #78716c !important;
+  text-shadow: 0 0 4px rgba(120, 113, 108, 0.5) !important;
+  animation: wreck-smoke-rise 3s ease-out infinite !important;
+  pointer-events: none;
+}
+
+.wreck-smoke-delay {
+  color: #57534e !important;
+  text-shadow: 0 0 4px rgba(87, 83, 78, 0.4) !important;
+  animation: wreck-smoke-rise 3s ease-out 1.2s infinite !important;
+  pointer-events: none;
+}
+
+@keyframes wreck-smoke-rise {
+  0% { transform: translateY(0) scale(1); opacity: 0; }
+  10% { opacity: 0.5; }
+  40% { opacity: 0.3; transform: translateY(-10px) scale(1.3); }
+  100% { transform: translateY(-24px) scale(1.8); opacity: 0; }
+}
+
+/* Static noise */
+.wreck-static {
+  color: #7f1d1d !important;
+  animation: wreck-static-noise 0.3s steps(1) infinite !important;
+}
+
+@keyframes wreck-static-noise {
+  0% { content: "░░"; opacity: 0.4; }
+  25% { content: "▓░"; opacity: 0.6; }
+  50% { content: "░▓"; opacity: 0.3; }
+  75% { content: "▓▓"; opacity: 0.5; }
+}
+
+/* Scanline distortion */
+.wreck-scanline {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(239, 68, 68, 0.03) 3px,
+    rgba(239, 68, 68, 0.03) 6px
+  );
+  pointer-events: none;
+  animation: wreck-scanline-shift 5s linear infinite;
+}
+
+@keyframes wreck-scanline-shift {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(6px); }
+}
+
+/* ============================================
+   DOWNLOAD BUTTON - CYBER CARGO BAY
+   ============================================ */
+
+.download-border {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(135deg, #0a1628, #0d0a1f, #081420) padding-box,
+    linear-gradient(135deg, #38bdf8, #06b6d4, #818cf8, #38bdf8) border-box;
+  background-size: 100% 100%, 300% 300%;
+  animation: download-border-scan 3s linear infinite;
+}
+
+@keyframes download-border-scan {
+  0% { background-position: 0 0, 0% 0%; }
+  50% { background-position: 0 0, 100% 100%; }
+  100% { background-position: 0 0, 0% 0%; }
+}
+
+.download-bg {
+  background:
+    radial-gradient(ellipse at 25% 50%, rgba(56, 189, 248, 0.2), transparent 65%),
+    radial-gradient(ellipse at 75% 50%, rgba(129, 140, 248, 0.15), transparent 65%),
+    radial-gradient(ellipse at 50% 80%, rgba(6, 182, 212, 0.1), transparent 65%);
+  pointer-events: none;
+  animation: download-bg-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes download-bg-pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+.download-btn {
+  animation: download-glow 2.5s ease-in-out infinite;
+  cursor: pointer;
+}
+
+@keyframes download-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.4))
+            drop-shadow(0 0 12px rgba(6, 182, 212, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.6))
+            drop-shadow(0 0 22px rgba(129, 140, 248, 0.3))
+            drop-shadow(0 0 36px rgba(6, 182, 212, 0.15));
+  }
+}
+
+.download-btn:hover {
+  filter: drop-shadow(0 0 14px rgba(56, 189, 248, 0.8))
+          drop-shadow(0 0 28px rgba(129, 140, 248, 0.5))
+          drop-shadow(0 0 44px rgba(6, 182, 212, 0.3)) !important;
+  transform: translateY(-2px);
+}
+
+.download-btn:hover .download-border {
+  background:
+    linear-gradient(135deg, #0e1e3a, #0d0a1f, #081420) padding-box,
+    linear-gradient(135deg, #7dd3fc, #22d3ee, #a5b4fc, #7dd3fc) border-box;
+  background-size: 100% 100%, 300% 300%;
+  animation: download-border-scan 1.5s linear infinite;
+}
+
+.download-btn:hover .download-bg {
+  background:
+    radial-gradient(ellipse at 25% 50%, rgba(56, 189, 248, 0.3), transparent 65%),
+    radial-gradient(ellipse at 75% 50%, rgba(129, 140, 248, 0.25), transparent 65%),
+    radial-gradient(ellipse at 50% 80%, rgba(6, 182, 212, 0.15), transparent 65%);
+  opacity: 1;
+}
+
+.download-text {
+  color: #38bdf8 !important;
+  text-shadow: 0 0 8px rgba(56, 189, 248, 0.6), 0 0 18px rgba(6, 182, 212, 0.3) !important;
+  animation: download-text-glow 2.5s ease-in-out infinite !important;
+}
+
+@keyframes download-text-glow {
+  0%, 100% { text-shadow: 0 0 8px rgba(56, 189, 248, 0.6), 0 0 18px rgba(6, 182, 212, 0.3); }
+  50% { text-shadow: 0 0 12px rgba(56, 189, 248, 0.9), 0 0 24px rgba(129, 140, 248, 0.4), 0 0 36px rgba(6, 182, 212, 0.2); }
+}
+
+.download-icon {
+  color: #22d3ee !important;
+  text-shadow: 0 0 8px rgba(34, 211, 238, 0.8) !important;
+  animation: download-icon-bounce 1.8s ease-in-out infinite !important;
+}
+
+@keyframes download-icon-bounce {
+  0%, 100% { transform: translateY(0); }
+  40% { transform: translateY(3px); }
+  60% { transform: translateY(-1px); }
+  80% { transform: translateY(1px); }
+}
+
+.download-badge {
+  color: #0a1628 !important;
+  background: linear-gradient(135deg, #38bdf8, #06b6d4) !important;
+  padding: 1px 5px !important;
+  border-radius: 2px !important;
+  text-shadow: none !important;
+  font-weight: bold !important;
+  animation: download-badge-pulse 3s ease-in-out infinite !important;
+}
+
+@keyframes download-badge-pulse {
+  0%, 100% { opacity: 0.8; box-shadow: 0 0 4px rgba(56, 189, 248, 0.4); }
+  50% { opacity: 1; box-shadow: 0 0 8px rgba(56, 189, 248, 0.7), 0 0 16px rgba(6, 182, 212, 0.3); }
+}
+
+.download-sparkle {
+  color: #7dd3fc !important;
+  text-shadow: 0 0 8px rgba(125, 211, 252, 0.9), 0 0 16px rgba(56, 189, 248, 0.6) !important;
+  animation: download-sparkle-hex 2.5s ease-out infinite !important;
+  pointer-events: none;
+}
+
+.download-sparkle-delay {
+  color: #818cf8 !important;
+  text-shadow: 0 0 8px rgba(129, 140, 248, 0.9), 0 0 16px rgba(129, 140, 248, 0.6) !important;
+  animation: download-sparkle-hex 2.5s ease-out 0.8s infinite !important;
+  pointer-events: none;
+}
+
+.download-sparkle-slow {
+  color: #22d3ee !important;
+  text-shadow: 0 0 8px rgba(34, 211, 238, 0.9), 0 0 16px rgba(34, 211, 238, 0.6) !important;
+  animation: download-sparkle-hex 2.5s ease-out 1.5s infinite !important;
+  pointer-events: none;
+}
+
+@keyframes download-sparkle-hex {
+  0% { transform: translateY(0) rotate(0deg) scale(0); opacity: 0; }
+  15% { transform: translateY(-5px) rotate(30deg) scale(1.3); opacity: 1; }
+  50% { transform: translateY(-14px) rotate(60deg) scale(1); opacity: 0.7; }
+  100% { transform: translateY(-26px) rotate(90deg) scale(0); opacity: 0; }
+}
+
+.download-sweep {
+  background: linear-gradient(
+    105deg,
+    transparent 25%,
+    rgba(56, 189, 248, 0.1) 40%,
+    rgba(129, 140, 248, 0.12) 50%,
+    rgba(6, 182, 212, 0.08) 60%,
+    transparent 75%
+  );
+  transform: translateX(-100%);
+  animation: download-sweep-move 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes download-sweep-move {
+  0%, 100% { transform: translateX(-120%); }
+  50% { transform: translateX(120%); }
+}
+
+.download-btn:hover .download-sweep {
+  animation: download-sweep-move 1.5s ease-in-out infinite;
+}
+
+.download-btn:hover .download-sparkle,
+.download-btn:hover .download-sparkle-delay,
+.download-btn:hover .download-sparkle-slow {
+  animation-duration: 1.2s !important;
+}
+
+/* ============================================
+   STELLAR BUTTON - DEEP SPACE GOLD / NEBULA
+   ============================================ */
+
+.stellar-border {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(135deg, #1a1408, #140f05, #0f0c02) padding-box,
+    linear-gradient(135deg, #fbbf24, #eab308, #d97706, #f59e0b, #fbbf24) border-box;
+  background-size: 100% 100%, 400% 400%;
+  animation: stellar-border-flow 4s linear infinite;
+}
+
+@keyframes stellar-border-flow {
+  0% { background-position: 0 0, 0% 0%; }
+  50% { background-position: 0 0, 100% 100%; }
+  100% { background-position: 0 0, 0% 0%; }
+}
+
+.stellar-bg {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(251, 191, 36, 0.25), transparent 70%),
+    radial-gradient(ellipse at 80% 50%, rgba(245, 158, 11, 0.2), transparent 70%),
+    radial-gradient(ellipse at 50% 80%, rgba(234, 179, 8, 0.1), transparent 70%);
+  pointer-events: none;
+  animation: stellar-bg-pulse 3s ease-in-out infinite;
+}
+
+@keyframes stellar-bg-pulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+.stellar-btn {
+  animation: stellar-glow 2.5s ease-in-out infinite;
+  cursor: pointer;
+}
+
+@keyframes stellar-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.5))
+            drop-shadow(0 0 16px rgba(245, 158, 11, 0.25));
+  }
+  50% {
+    filter: drop-shadow(0 0 14px rgba(251, 191, 36, 0.7))
+            drop-shadow(0 0 28px rgba(234, 179, 8, 0.35))
+            drop-shadow(0 0 40px rgba(217, 119, 6, 0.15));
+  }
+}
+
+.stellar-btn:hover {
+  filter: drop-shadow(0 0 16px rgba(251, 191, 36, 0.9))
+          drop-shadow(0 0 32px rgba(245, 158, 11, 0.6))
+          drop-shadow(0 0 48px rgba(234, 179, 8, 0.3)) !important;
+  transform: translateY(-2px);
+}
+
+.stellar-btn:hover .stellar-border {
+  background:
+    linear-gradient(135deg, #241c0e, #1a1408, #0f0c02) padding-box,
+    linear-gradient(135deg, #fde68a, #fbbf24, #eab308, #fbbf24, #fde68a) border-box;
+  background-size: 100% 100%, 400% 400%;
+  animation: stellar-border-flow 2s linear infinite;
+}
+
+.stellar-btn:hover .stellar-bg {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(251, 191, 36, 0.35), transparent 70%),
+    radial-gradient(ellipse at 80% 50%, rgba(245, 158, 11, 0.3), transparent 70%),
+    radial-gradient(ellipse at 50% 80%, rgba(234, 179, 8, 0.15), transparent 70%);
+  opacity: 1;
+}
+
+/* Stellar text - golden glow */
+.stellar-text {
+  color: #fbbf24 !important;
+  text-shadow: 0 0 8px rgba(251, 191, 36, 0.6), 0 0 20px rgba(245, 158, 11, 0.3) !important;
+  animation: stellar-text-glow 2.5s ease-in-out infinite !important;
+}
+
+@keyframes stellar-text-glow {
+  0%, 100% { text-shadow: 0 0 8px rgba(251, 191, 36, 0.6), 0 0 20px rgba(245, 158, 11, 0.3); }
+  50% { text-shadow: 0 0 14px rgba(251, 191, 36, 1), 0 0 28px rgba(234, 179, 8, 0.5), 0 0 40px rgba(217, 119, 6, 0.2); }
+}
+
+/* Star icon - pulsing supernova */
+.stellar-star {
+  color: #fbbf24 !important;
+  text-shadow: 0 0 10px rgba(251, 191, 36, 1), 0 0 20px rgba(245, 158, 11, 0.6) !important;
+  animation: stellar-star-pulse 2.5s ease-in-out infinite !important;
+}
+
+@keyframes stellar-star-pulse {
+  0%, 100% { transform: scale(1); color: #fbbf24 !important; text-shadow: 0 0 10px rgba(251, 191, 36, 1), 0 0 20px rgba(245, 158, 11, 0.6); }
+  25% { transform: scale(1.4); color: #fde68a !important; text-shadow: 0 0 16px rgba(253, 230, 138, 1), 0 0 28px rgba(251, 191, 36, 0.8); }
+  50% { transform: scale(1); color: #f59e0b !important; text-shadow: 0 0 10px rgba(245, 158, 11, 1), 0 0 20px rgba(234, 179, 8, 0.6); }
+  75% { transform: scale(1.3); color: #eab308 !important; text-shadow: 0 0 14px rgba(234, 179, 8, 1), 0 0 24px rgba(217, 119, 6, 0.7); }
+}
+
+/* Sparkles - golden dust particles */
+.stellar-sparkle {
+  color: #fde68a !important;
+  text-shadow: 0 0 10px rgba(253, 230, 138, 1), 0 0 20px rgba(251, 191, 36, 0.8) !important;
+  animation: stellar-sparkle-float 2.2s ease-out infinite !important;
+  pointer-events: none;
+}
+
+.stellar-sparkle-delay {
+  color: #f59e0b !important;
+  text-shadow: 0 0 10px rgba(245, 158, 11, 1), 0 0 20px rgba(234, 179, 8, 0.8) !important;
+  animation: stellar-sparkle-float 2.2s ease-out 0.7s infinite !important;
+  pointer-events: none;
+}
+
+.stellar-sparkle-slow {
+  color: #d97706 !important;
+  text-shadow: 0 0 10px rgba(217, 119, 6, 1), 0 0 20px rgba(217, 119, 6, 0.8) !important;
+  animation: stellar-sparkle-float 2.2s ease-out 1.3s infinite !important;
+  pointer-events: none;
+}
+
+@keyframes stellar-sparkle-float {
+  0% { transform: translateY(0) scale(0); opacity: 0; }
+  15% { transform: translateY(-5px) scale(1.4); opacity: 1; }
+  50% { transform: translateY(-14px) scale(1); opacity: 0.8; }
+  100% { transform: translateY(-26px) scale(0); opacity: 0; }
+}
+
+/* Arrow indicator - golden blink */
+.stellar-arrows {
+  color: #fbbf24 !important;
+  animation: stellar-arrow-blink 0.8s step-end infinite !important;
+}
+
+@keyframes stellar-arrow-blink {
+  0%, 100% { color: #fbbf24 !important; opacity: 0.6; text-shadow: 0 0 6px rgba(251, 191, 36, 0.8); }
+  50% { color: #fde68a !important; opacity: 1; text-shadow: 0 0 6px rgba(253, 230, 138, 0.8); }
+}
+
+/* Light sweep effect */
+.stellar-sweep {
+  background: linear-gradient(
+    105deg,
+    transparent 25%,
+    rgba(251, 191, 36, 0.12) 40%,
+    rgba(245, 158, 11, 0.15) 50%,
+    rgba(234, 179, 8, 0.1) 60%,
+    transparent 75%
+  );
+  transform: translateX(-100%);
+  animation: stellar-sweep-move 3.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes stellar-sweep-move {
+  0%, 100% { transform: translateX(-120%); }
+  50% { transform: translateX(120%); }
+}
+
+.stellar-btn:hover .stellar-sweep {
+  animation: stellar-sweep-move 1.5s ease-in-out infinite;
+}
+
+.stellar-btn:hover .stellar-sparkle,
+.stellar-btn:hover .stellar-sparkle-delay,
+.stellar-btn:hover .stellar-sparkle-slow {
+  animation-duration: 1s !important;
+}
