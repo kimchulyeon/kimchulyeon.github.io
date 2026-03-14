@@ -43,6 +43,17 @@ export const projects: Project[] = [
     ],
   },
   {
+    title: 'copyNpaste',
+    description:
+      'SI 프로젝트 폴더 동기화 도구. 회사 ↔ 고객사 폴더 간 변경 파일 감지, Git 이력 조회, 인프라 파일 경고, 선택적 덮어쓰기.',
+    techStack: ['Electron', 'React', 'TypeScript', 'Tailwind'],
+    screenshot: '/images/copynpaste.png',
+    githubUrl: 'https://github.com/kimchulyeon/copyNpaste',
+    downloadUrls: [
+      { url: 'https://github.com/kimchulyeon/copyNpaste/releases/latest', platform: 'macOS' },
+    ],
+  },
+  {
     title: 'RectangleSnap',
     description:
       '커서 이펙트, 줌인, 웹캠 오버레이를 지원하는 화면 녹화 앱.',
