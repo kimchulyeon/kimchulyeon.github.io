@@ -13,6 +13,15 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "White Cotton",
+    description:
+      "AWS 서비스 백과사전. 99개 AWS 서비스를 비유와 레벨별 설명으로 쉽게 이해하고, AI가 최적의 아키텍처를 추천하고 다이어그램을 그려줍니다.",
+    techStack: ["Next.js", "TypeScript", "Tailwind", "React Flow"],
+    screenshot: "/images/whitecotton.png",
+    githubUrl: "https://github.com/kimchulyeon/whitecotton",
+    serviceUrl: "https://whitecotton.wiki",
+  },
+  {
     title: "GlitchSnap Studio",
     description:
       "QA All-in-One 데스크톱 도구. 브라우저 녹화, 스크린샷, 환경정보 수집, TC 관리까지 하나의 앱에서.",
